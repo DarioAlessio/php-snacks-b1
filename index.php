@@ -46,10 +46,15 @@
           ?>
           <div>
             <h1><?php echo $item['name'] ?></h1>
-            <p><?php echo $item['description'] ?></p>
-            <p><?php echo $item['parking'] ?></p>
-            <p><?php echo $item['vote'] . "/5"?></p>
-            <p><?php echo $item['distance_to_center'] ?></p>
+            <p><?php echo "Description: " . $item['description'] ?></p>
+            <p><?php if ($item[parking]) {
+                  echo "Parking : Yes";
+                } else {
+                  echo "Parking : No";
+                }?>
+            </p>
+            <p><?php echo "Vote: " . $item['vote'] . "/5"?></p>
+            <p><?php echo "Distance to center " . $item['distance_to_center'] ." km"?></p>
           </div>
           <?php
         }
